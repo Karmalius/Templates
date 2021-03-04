@@ -1,0 +1,36 @@
+<div class="info">
+  <br />
+  <h1>Locations</h1>
+  <br />
+  <p>
+    Here are the locations seen in the series and the number of known characters
+    living there
+  </p>
+  <br />
+</div>
+<div id="place" class="place"></div>
+<script>
+  // Tallennetaan APIn url muuttujaan.
+  var url = "https://rickandmortyapi.com/api/location";
+  // Suoritetaan AJAX pyyntö ja lisätään funktio: Kun saadaan vastaus pyyntöön...
+  $.get(url, function (data) {
+    // Luodaan out muuttuja johon tallennetaan html table tägi ja taulukon sarakkeiden otsikot.
+    var out =
+      "<table class='table'><tr><th>Name</th><th>Type</th><th>Characters</th></tr>";
+    // For loopilla käydään objekti läpi sen koko pituudelta.
+    for (i = 0; i < data.results.length; i++) {
+      // Joka kierroksella lisätään muuttujaan tr tägi jolla aloitetaan rivi.
+      out += "<tr>";
+      // Joka kierroksella lisätään muuttujaan td tägi jolla tehdään solu. Haetaan onjektista haluttu data.
+      out += "<td>" + data.results[i].name + "</td>";
+      out += "<td>" + data.results[i].type + "</td>";
+      out += "<td>" + data.results[i].residents.length + "</td>";
+      // Joka kierroksella lisätään muuttujaan tr tägi jolla suljetaan rivi.
+      out += "</tr>";
+    }
+    // Suljetaan table elementti html table tägillä.
+    out += "</table>";
+    // Vaihdetaan houseInfo -elementin html sisällöksi out -muuttuja, jossa on APIsta haettu data taulukossa.
+    $("#place").html(out);
+  });
+</script>
