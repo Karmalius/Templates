@@ -18,10 +18,10 @@
       // For loopilla käydään objekti läpi sen koko pituudelta.
       for (i = 0; i < data.results.length; i++) {
         // Joka kierroksella lisätään muuttujaan tr tägi jolla aloitetaan rivi.
-        out += "<div class='card' style='width: 18rem;''><img src='" + data.results[i].image + "' class='card-img-top','img-circle' alt='" + data.results[i].name+ "'>"
+        out += "<div class='card' style='width: 18rem;''><img src='" + data.results[i].image + "' class='card-img-top' alt='" + data.results[i].name+ "'>"
         out += "<div class='card-body'>"
         out += "<h5 class='card-title'>" + data.results[i].name + "</h5>"
-        out += "<p class='card-text'>Species: " + data.results[i].species + "\n Gender: " + data.results[i].gender+ "</p>" 
+        out += "<p class='card-text'>Species: " + data.results[i].species + "\nGender: " + data.results[i].gender+ "</p>" 
         out += "</div>"
         //out += "<tr>";
         // Joka kierroksella lisätään muuttujaan td tägi jolla tehdään solu. Haetaan onjektista haluttu data.
