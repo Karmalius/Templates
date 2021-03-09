@@ -13,7 +13,7 @@
   $.get(url, function (data) {
     // Luodaan out muuttuja johon tallennetaan html table tägi ja taulukon sarakkeiden otsikot.
     var out =
-      "<table class='table'><tr><th>Episode</th><th>Name</th><th>Air date</th></tr>";
+      "<table class='table table-hover'><tr><th>Episode</th><th>Name</th><th>Air date</th></tr>";
     // For loopilla käydään objekti läpi sen koko pituudelta.
     for (i = 0; i < data.results.length; i++) {
       // Joka kierroksella lisätään muuttujaan tr tägi jolla aloitetaan rivi.
