@@ -8,7 +8,7 @@
   </p>
   <br />
 </div>
-<div id="place" class="place"></div>
+<div id="place"></div>
 <script>
   // Tallennetaan APIn url muuttujaan.
   var url = "https://rickandmortyapi.com/api/location";
@@ -30,7 +30,7 @@
     }
     // Suljetaan table elementti html table tägillä.
     out += "</table>";
-    // Vaihdetaan houseInfo -elementin html sisällöksi out -muuttuja, jossa on APIsta haettu data taulukossa.
+    // Vaihdetaan place -elementin html sisällöksi out -muuttuja, jossa on APIsta haettu data taulukossa.
     $("#place").html(out);
   });
 </script>
