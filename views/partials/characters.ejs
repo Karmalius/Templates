@@ -5,21 +5,21 @@
   <p>Here are some main characters in Rick and Morty -series</p>
   <br />
 </div>
-<div id="place" class="place"></div>
+<div id="place" class="card-columns"></div>
 <script>
     // Tallennetaan APIn url muuttujaan.
     var url = "https://rickandmortyapi.com/api/character";
     // Suoritetaan AJAX pyyntö ja lisätään funktio: Kun saadaan vastaus pyyntöön...
     $.get(url, function (data) {
-      // Luodaan out muuttuja johon tallennetaan html table tägi ja taulukon sarakkeiden otsikot.
+      // Luodaan out muuttuja.
       var out =
-        //"<table class='table'><tr><th>Image</th><th>Name</th><th>Species</th><th>Gender</th></tr>";
-          "<div>"
+          ""
       // For loopilla käydään objekti läpi sen koko pituudelta.
       for (i = 0; i < data.results.length; i++) {
-        // Joka kierroksella lisätään muuttujaan tr tägi jolla aloitetaan rivi.
-        out += "<div>"
-        out += "<div class='card bg-light mb-3' style='width: 18rem;''><img src='" + data.results[i].image + "' class='card-img-top' alt='" + data.results[i].name+ "'>"
+        // Joka kierroksella lisätään muuttujaan div tägi.
+        out += "<div class='card bg-light mb-3' style='width: 18rem;''>"
+        // Joka kierroksella lisätään diviin card-container. Siinä on kuva, otsikko ja tekstiä, jotka haetaan objektista.
+        out += "<img src='" + data.results[i].image + "' class='card-img-top' alt='" + data.results[i].name+ "'>"
         out += "<div class='card-body'>"
         out += "<h3 class='card-title'>" + data.results[i].name + "</h3>"
         out += "<p class='card-text'>Species: " + data.results[i].species +"</p>" 
@@ -27,19 +27,9 @@
         out += "</div>"
         out += "</div>"
         out += "<br>"
-        
-        //out += "<tr>";
-        // Joka kierroksella lisätään muuttujaan td tägi jolla tehdään solu. Haetaan onjektista haluttu data.
-        //out += "<td><img src='" + data.results[i].image + "' class='img-circle' width='180px'></td>";
-        //out += "<td>" + data.results[i].name + "</td>";
-        //out += "<td>" + data.results[i].species + "</td>";
-        //out += "<td>" + data.results[i].gender + "</td>";
-        // Joka kierroksella lisätään muuttujaan tr tägi jolla suljetaan rivi.
-        //out += "</tr>";
       }
-      // Suljetaan table elementti html table tägillä.
-      out += "</div>";
-      // Vaihdetaan houseInfo -elementin html sisällöksi out -muuttuja, jossa on APIsta haettu data taulukossa.
+      out += "";
+      // Vaihdetaan place -elementin html sisällöksi out -muuttuja, jossa on APIsta haettu data card-containereissa.
       $("#place").html(out);
     });
 </script>
