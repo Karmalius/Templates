@@ -17,9 +17,9 @@
           ""
       // For loopilla käydään objekti läpi sen koko pituudelta.
       for (i = 0; i < data.results.length; i++) {
-        // Joka kierroksella lisätään muuttujaan div tägi.
+        // Joka kierroksella lisätään muuttujaan card-container.
         out += "<div class='card' style='width: 18rem;''>"
-        // Joka kierroksella lisätään diviin card-container. Siinä on kuva, otsikko ja tekstiä, jotka haetaan objektista.
+        // Joka kierroksella lisätään card-containeriin kuva, otsikko ja tekstiä, jotka haetaan objektista.
         out += "<img src='" + data.results[i].image + "' class='card-img-top' alt='" + data.results[i].name+ "'>"
         out += "<div class='card-body'>"
         out += "<h3 class='card-title'>" + data.results[i].name + "</h3>"
