@@ -12,23 +12,26 @@ app.set("view engine", "ejs");
 app.locals.pretty = true;
 
 // Luodaan sivu. Res.render()-funktio lähettää sivut template-moottorille ennen niiden päätymistä loppukäyttäjälle selaimeen.
-app.get("/", function(req, res) {
-    res.render("pages/index");
-  });
-
-  app.get("/characters", function (req, res) {
-    res.render("pages/characterpage");
+app.get("/", function (req, res) {
+  res.render("pages/index");
 });
 
+// Luodaan sivu.
+app.get("/characters", function (req, res) {
+  res.render("pages/characterpage");
+});
+
+// Luodaan sivu.
 app.get("/locations", function (req, res) {
-    res.render("pages/locationpage");
+  res.render("pages/locationpage");
 });
 
+// Luodaan sivu.
 app.get("/episodes", function (req, res) {
-    res.render("pages/episodepage");
+  res.render("pages/episodepage");
 });
 
-  // Luodaan web-palvelin.
+// Luodaan web-palvelin.
 app.listen(PORT, () => {
   console.log("Example app listening on port 8081!");
 });

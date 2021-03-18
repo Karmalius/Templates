@@ -8,29 +8,28 @@
 <!--Card-columnsilla järjestetään card -containerit automaattisesti vierekkäin-->
 <div id="place" class="card-columns"></div>
 <script>
-    // Tallennetaan APIn url muuttujaan.
-    var url = "https://rickandmortyapi.com/api/character";
-    // Suoritetaan AJAX pyyntö ja lisätään funktio: Kun saadaan vastaus pyyntöön...
-    $.get(url, function (data) {
-      // Luodaan out muuttuja.
-      var out =
-          ""
-      // For loopilla käydään objekti läpi sen koko pituudelta.
-      for (i = 0; i < data.results.length; i++) {
-        // Joka kierroksella lisätään muuttujaan card-container.
-        out += "<div class='card' style='width: 18rem;''>"
-        // Joka kierroksella lisätään card-containeriin kuva, otsikko ja tekstiä, jotka haetaan objektista.
-        out += "<img src='" + data.results[i].image + "' class='card-img-top' alt='" + data.results[i].name+ "'>"
-        out += "<div class='card-body'>"
-        out += "<h3 class='card-title'>" + data.results[i].name + "</h3>"
-        out += "<p class='card-text'>Species: " + data.results[i].species +"</p>" 
-        out += "<p class='card-text'>Gender: " + data.results[i].gender + "</p>" 
-        out += "</div>"
-        out += "</div>"
-        out += "<br>"
-      }
-      out += "";
-      // Vaihdetaan place -elementin html sisällöksi out -muuttuja, jossa on APIsta haettu data card-containereissa.
-      $("#place").html(out);
-    });
+  // Tallennetaan APIn url muuttujaan.
+  var url = "https://rickandmortyapi.com/api/character";
+  // Suoritetaan AJAX pyyntö ja lisätään funktio: Kun saadaan vastaus pyyntöön...
+  $.get(url, function (data) {
+    // Luodaan out muuttuja.
+    var out = "";
+    // For loopilla käydään objekti läpi sen koko pituudelta.
+    for (i = 0; i < data.results.length; i++) {
+      // Joka kierroksella lisätään muuttujaan card-container.
+      out += "<div class='card' style='width: 18rem;''>";
+      // Joka kierroksella lisätään card-containeriin kuva, otsikko ja tekstiä, jotka haetaan objektista.
+      out += "<img src='" + data.results[i].image + "' class='card-img-top' alt='" + data.results[i].name + "'>";
+      out += "<div class='card-body'>";
+      out += "<h3 class='card-title'>" + data.results[i].name + "</h3>";
+      out += "<p class='card-text'>Species: " + data.results[i].species + "</p>";
+      out += "<p class='card-text'>Gender: " + data.results[i].gender + "</p>";
+      out += "</div>";
+      out += "</div>";
+      out += "<br>";
+    }
+    out += "";
+    // Vaihdetaan place -elementin html sisällöksi out -muuttuja, jossa on APIsta haettu data card-containereissa.
+    $("#place").html(out);
+  });
 </script>
